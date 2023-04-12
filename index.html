@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Cristyan Morales Acevedo">
+    <title>Reproductor Maiz Pira</title>
+
+    <!-- Bootstrap:CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Inner CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <div class="card-group col-lg-3">
+        <div class="card">
+            <!-- imagen del programa -->
+            <img class="card-img-top wx-auto rounded-circle" id="icon" src="media/img/default.jpg" alt="Card image cap">
+            <div class="card-body">
+                <!-- Nombre del Programa -->
+                <h4 class="card-title text-center">Reproductor - Maiz Pira</h4>
+                <!-- Imagen del album de la canción en reproducción -->
+                <img class="img-fluid" src="media/img/default.jpg" alt="Imagen del Álbum" id="imgSong">
+                <!-- **************** Canción en reproducción: IMPORTANTE ********************** -->
+                <audio src="" id="currentSong"></audio>
+                <!-- Nombre de la canción en reproducción -->
+                <p class="card-text ms-3" id="nameSong">Nombre de la Canción</p> 
+                <!-- 00:00:03/00:03:58 -->
+                <!-- Tiempos de reproducción, actual y total -->
+                <label for="time" class="form-label container-fluid text-end" id="time"></label>
+                <!-- Barra de reproducción -->
+                <input type="range" class="container-fluid form-range" name="timebar" id="timebar">
+
+                <!-- botonera -->
+                <div class="row justify-content-center align-items-center g-2">
+                    <!-- botón: Saltar anterior canción -->
+                    <button class="col-2 rounded mx-3 d-block mx-auto botonera" onclick="skipBack()" id="aSkip"><img
+                            src="media/icon/skip-back.svg" alt="skip-back"></img></button>
+                    <!-- botón: Rebobinar -->
+                    <button class="col-2 rounded mx-3 d-block mx-auto botonera" onclick="rewind()" id="rw"><img
+                            src="media/icon/rewind.svg" alt="rewind"></button>
+                    <!-- botón: Play / Pause -->
+                    <button class="col-2 rounded mx-3 d-block mx-auto botonera" onclick="toPlayPause()"><img
+                            src="media/icon/play.svg" alt="play/pause" id="playPause"></button>
+                    <!-- botón: Avanzar -->
+                    <button class="col-2 rounded mx-3 d-block mx-auto botonera" onclick="fforward()" id="ff"><img
+                            src="media/icon/fast-forward.svg" alt="fast-forward"></button>
+                    <!-- botón: Saltar siguiente canción -->
+                    <button class="col-2 rounded mx-3 d-block mx-auto botonera" onclick="skipForward()" id="bSkip"><img
+                            src="media/icon/skip-forward.svg" alt="skip-forward"></button>
+                </div>
+                <div class="m-1">
+                    <select name="playlist" id="playlist" class="form-select-lg container-fluid">
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap:JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Inner JS -->
+    <script onload="creador()" src="js/script.js"></script>
+</body>
+
+</html>
