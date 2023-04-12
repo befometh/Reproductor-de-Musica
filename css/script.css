@@ -1,0 +1,8 @@
+#icon {
+    max-width: 3rem;
+}
+
+.botonera:hover{
+    background-color: coral;
+    padding:0px -1px 0px -1px;
+}
